@@ -14,7 +14,15 @@ export const EditPolicyPage = ({ policyToEdit }) => {
     const navigate = useNavigate();
 
     const editPolicy = async () => {
-        const editedPolicy = {policyNumber, policyProvider, policyType, startDate, endDate, premium, paymentDate};
+        const editedPolicy = {
+            policyNumber, 
+            policyProvider, 
+            policyType, 
+            startDate, 
+            endDate, 
+            premium, 
+            paymentDate
+        };
         const response = await fetch(`/policies/${policyToEdit._id}`,{
             method: 'PUT',
             body: JSON.stringify(editedPolicy),
@@ -25,7 +33,11 @@ export const EditPolicyPage = ({ policyToEdit }) => {
         if(response.status === 200){
             alert("Successfully edited the policy");
         } else{
-            alert(`Failed to edit policy, status code = ${response.status}`);
+            const errorData = await response.json();
+            //console.log(errorData.Error);
+            const errorMessage = errorData.Error || `Failed to add policy, status code = ${response.status}`;
+            alert(errorMessage);
+            //alert(`Failed to edit policy, status code = ${response.status}`);
         }
         navigate("/");
     };
@@ -33,7 +45,7 @@ export const EditPolicyPage = ({ policyToEdit }) => {
 
     return (
         <div>
-            <h3>Edit policy and save</h3>
+            <h3>Edit Policy Details</h3>
             <div className = "form-group">
                 <label>Policy Number:</label>
                 <input

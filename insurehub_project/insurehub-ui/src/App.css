@@ -66,7 +66,7 @@ footer {
   border-radius: 10px;
   /*position: relative;
   line-height: 24;*/
-  margin-right: 50px;
+  margin-right: 160px;
 }
 
 .App-nav-add-plicy a:hover {
@@ -135,19 +135,27 @@ tr:hover {background-color: #ddd;}
 .form-group {
   display: flex;                  /* Use flexbox for layout */
   width: 500px;                   /* Set a default width for form groups */
-  align-items: center;            /* Vertically center-align child elements 垂直居中对齐子元素 */
-  justify-content: space-between; /* Add space between elements 为元素之间添加空间 */
-  margin-bottom: 10px;            /* Add a margin at the bottom for spacing between form groups为每个 form-group 添加底部外边距 */
+  align-items: center;            /* Vertically center-align child elements */
+  justify-content: space-between; /* Add space between elements */
+  margin-bottom: 10px;            /* Add a margin at the bottom for spacing between form groups */
 }
 
 /* Style for the label element */
 label {
-  margin-right: 10px;             /* Add a right margin for spacing between label and input 为标签添加右边距 */
-  width: 200px;                   /* Set a fixed width for labels for consistency 固定标签宽度 */
-  text-align: left;               /* Ensure text within the label is left-aligned 使标签文本向左对齐 */
+  margin-right: 10px;             /* Add a right margin for spacing between label and input */
+  width: 225px;                   /* Set a fixed width for labels for consistency */
+  text-align: left;               /* Ensure text within the label is left-aligned */
 }
 
 /* Style for the input field */
 input {
-  flex: 1;                        /* Allow input field to take up the remaining available space 输入字段占用剩余空间 */
+  flex: 1;                        /* Allow input field to take up the remaining available space */
+}
+
+
+span {
+  color: gray;
+  font-size: medium;
+  text-align: left;
+  width: 50%;
 }

@@ -4,19 +4,27 @@ import PolicyList from '../components/PolicyList';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function HomePage({ setPolicyToEdit }) {
+function HomePage({ setPolicyToEdit, setPolicyToView }) {
     const [policies, setPolicies] = useState([]);
     const navigate = useNavigate();
 
     const onDelete = async _id => {
-        const response = await fetch(`/policies/${_id}`, { method: 'DELETE' });
-        if (response.status === 204){
-            const newPolicies = policies.filter(m => m._id !== _id);
-            setPolicies(newPolicies);
-        } else {
-            console.error(`Failed to delete policy with _id = ${_id}, status code = ${response.status}`);
+        // Show a confirmation dialog
+        if (window.confirm('Are you sure you want to delete this policy? This action cannot be undone.')) {
+            const response = await fetch(`/policies/${_id}`, { method: 'DELETE' });
+            if (response.status === 204){
+                const newPolicies = policies.filter(m => m._id !== _id);
+                setPolicies(newPolicies);
+            } else {
+                console.error(`Failed to delete policy with _id = ${_id}, status code = ${response.status}`);
+            }
         }
     };
+    
+    const onView = policy => {
+        setPolicyToView(policy);
+        navigate("/view-policy");
+    }
 
     const onEdit = policy => {
         setPolicyToEdit(policy);
@@ -35,15 +43,17 @@ function HomePage({ setPolicyToEdit }) {
 
     return (
         <>          
-            <PolicyList policies={policies} onDelete={onDelete} onEdit={onEdit}></PolicyList>
+            <PolicyList policies={policies} onDelete={onDelete} onEdit={onEdit} onView={onView}></PolicyList>
 
             <div className="nav-container">
                 <nav className="App-nav-add-plicy">
                     <Link to="/add-policy">Add New Policy</Link>
                 </nav>
-                <nav className="App-nav">
+                {/* 
+                <nav className="App-nav" >
                     <Link to="/">Log out</Link>
                 </nav>
+                */}
             </div>
         </>
     );

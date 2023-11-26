@@ -13,7 +13,15 @@ export const CreatePolicyPage = () => {
     const navigate = useNavigate();
 
     const addPolicy = async () => {
-        const newPolicy = {policyNumber, policyProvider, policyType, startDate, endDate, premium, paymentDate};
+        const newPolicy = {
+            policyNumber, 
+            policyProvider, 
+            policyType, 
+            startDate, 
+            endDate, 
+            premium, 
+            paymentDate
+        };
         const response = await fetch('/policies',{
             method: 'POST',
             body: JSON.stringify(newPolicy),
@@ -24,7 +32,11 @@ export const CreatePolicyPage = () => {
         if(response.status === 201){
             alert("Successfully added the policy");
         } else{
-            alert(`Failed to add policy, status code = ${response.status}`);
+            const errorData = await response.json();
+            //console.log(errorData.Error);
+            const errorMessage = errorData.Error || `Failed to add policy, status code = ${response.status}`;
+            alert(errorMessage);
+            //alert(`Failed to add policy, status code = ${response.status}`);
         }
         navigate("/");
     };
