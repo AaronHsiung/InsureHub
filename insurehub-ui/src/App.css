@@ -1,0 +1,161 @@
+body {
+  background-color: rgb(241, 240, 236);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  color: rgb(236, 189, 87);
+}
+
+h3 {
+  font-size: 25px;
+}
+
+footer {
+  margin-bottom: 20%;
+  font-family: cursive;
+  
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: navy;
+  
+}
+
+.App-nav a{
+  margin-top: 100%;
+  padding: 10px 20px 10px 20px;
+  background-color: rgb(237, 176, 129);
+  text-decoration: none;
+  color: white;
+  /*line-height: 5;*/
+  vertical-align: middle;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 10px;
+  /*position: absolute;
+  right: 200px;
+  bottom: 0px;*/
+}
+
+.App-nav a:hover {
+  color: rgb(139, 186, 194);
+  background-color: rgb(247, 218, 174);
+}
+
+.App-nav-add-plicy a{
+  margin-top: 100%;
+  padding: 10px 20px 10px 20px;
+  background-color: rgb(198, 212, 107);
+  text-decoration: none;
+  color: white;
+  vertical-align: middle;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-radius: 10px;
+  /*position: relative;
+  line-height: 24;*/
+  margin-right: 160px;
+}
+
+.App-nav-add-plicy a:hover {
+  color: rgb(139, 186, 194);
+  background-color: rgb(247, 218, 174);
+}
+
+.App-nav-function button {
+  padding: 10px 20px 10px 20px;
+  background-color: rgb(198, 212, 107);
+  text-decoration: none;
+  color: white;
+  border: none;
+  vertical-align: middle;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-radius: 10px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /*position: absolute;
+  bottom: 0px;*/
+  margin-right: 200px;
+}
+
+.App-nav-function button:hover {
+  color: rgb(139, 186, 194);
+  background-color: rgb(247, 218, 174);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 650px;
+  line-height: 10
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: rgb(237, 238, 227);
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #c7c5b5;
+  color: white;
+}
+
+tr:hover td {
+  background-color: #ddd;
+}
+
+/* 
+tr:nth-child(even){background-color: #eee09c;}
+tr:nth-child(even){background-color: #eee09c;}
+tr:hover {background-color: #ddd;}
+*/
+ 
+/* Style for each form group containing a label and an input field */
+.form-group {
+  display: flex;                  /* Use flexbox for layout */
+  width: 500px;                   /* Set a default width for form groups */
+  align-items: center;            /* Vertically center-align child elements */
+  justify-content: space-between; /* Add space between elements */
+  margin-bottom: 10px;            /* Add a margin at the bottom for spacing between form groups */
+}
+
+/* Style for the label element */
+label {
+  margin-right: 10px;             /* Add a right margin for spacing between label and input */
+  width: 225px;                   /* Set a fixed width for labels for consistency */
+  text-align: left;               /* Ensure text within the label is left-aligned */
+}
+
+/* Style for the input field */
+input {
+  flex: 1;                        /* Allow input field to take up the remaining available space */
+}
+
+
+span {
+  color: gray;
+  font-size: medium;
+  text-align: left;
+  width: 50%;
+}
